@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: uncool-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor
+    restart: unless-stopped
